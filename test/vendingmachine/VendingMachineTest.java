@@ -145,4 +145,6 @@ public class VendingMachineTest {
 		int actual = sut.getTotalamount();
 		assertThat(actual, is(50));
 	}
+	
+	
 }
