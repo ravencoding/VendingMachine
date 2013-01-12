@@ -31,7 +31,7 @@ public class VendingMachineTest {
 
 	@Test
 	public void _100円玉が投入されているかを確認() {
-		sut.add(100);
+		sut.add(Money._100);
 		int actual = sut.getTotalamount();
 		assertThat(actual, is(100));
 	}
@@ -82,7 +82,7 @@ public class VendingMachineTest {
 	
 	@Test
 	public void _1円玉を投入すると1円玉が帰ってくる() throws Exception {
-		int actual = sut.add(1);
+		int actual = sut.add(Money._1);
 		assertThat(actual ,is(1));
 	}
 	
@@ -130,5 +130,19 @@ public class VendingMachineTest {
 		sut.add(5);
 		int actual = sut.getTotalamount();
 		assertThat("投入後",actual ,is(0));
+	}
+	
+	@Test
+	public void _10円玉列挙型にリファクタリングする() throws Exception {
+		sut.add(Money._10);
+		int actual = sut.getTotalamount();
+		assertThat(actual, is(10));
+	}
+
+	@Test
+	public void _50円玉列挙型にリファクタリングする() throws Exception {
+		sut.add(Money._50);
+		int actual = sut.getTotalamount();
+		assertThat(actual, is(50));
 	}
 }

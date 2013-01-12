@@ -23,4 +23,8 @@ public class VendingMachine {
 		return i;
 	}
 
+	public int add(Money money) {
+		return add(money.value);
+	}
+
 }
