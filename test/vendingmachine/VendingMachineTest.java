@@ -79,4 +79,56 @@ public class VendingMachineTest {
 		assertThat("つり銭", actual, is(60));
 		assertThat("総計", sut.getTotalamount(), is(0));
 	}
+	
+	@Test
+	public void _1円玉を投入すると1円玉が帰ってくる() throws Exception {
+		int actual = sut.add(1);
+		assertThat(actual ,is(1));
+	}
+	
+	@Test
+	public void _100円玉を投入すると0が帰ってくる() throws Exception {
+		int actual = sut.add(100);
+		assertThat(actual ,is(0));
+	}
+	
+	@Test
+	public void _5円玉を投入すると5円玉が帰ってくる() throws Exception {
+		int actual = sut.add(5);
+		assertThat(actual ,is(5));
+	}
+	
+	@Test
+	public void 二千円札を投入すると二千円札が帰ってくる() throws Exception {
+		int actual = sut.add(2000);
+		assertThat(actual ,is(2000));
+	}
+	
+	@Test
+	public void 五千円札を投入すると五千円札が帰ってくる() throws Exception {
+		int actual = sut.add(5000);
+		assertThat(actual ,is(5000));
+	}
+	
+	@Test
+	public void 一万円札を投入すると一万円札が帰ってくる() throws Exception {
+		int actual = sut.add(10000);
+		assertThat(actual ,is(10000));
+	}
+	
+	@Test
+	public void _1円玉を投入しても金額に加算しない() throws Exception {
+		assertThat("投入前",sut.getTotalamount(),is(0));
+		sut.add(1);
+		int actual = sut.getTotalamount();
+		assertThat("投入後",actual ,is(0));
+	}
+	
+	@Test
+	public void _5円玉を投入しても金額に加算しない() throws Exception {
+		assertThat("投入前",sut.getTotalamount(),is(0));
+		sut.add(5);
+		int actual = sut.getTotalamount();
+		assertThat("投入後",actual ,is(0));
+	}
 }
