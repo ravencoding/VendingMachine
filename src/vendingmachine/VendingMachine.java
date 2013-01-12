@@ -2,7 +2,7 @@ package vendingmachine;
 
 public class VendingMachine {
 
-	public int amount;
+	private int amount;
 
 	public int add(int i) {
 		if (i == 1 || i == 5 || i == 2000 || i == 5000 || i == 10000) {

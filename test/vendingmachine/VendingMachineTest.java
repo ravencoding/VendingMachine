@@ -18,35 +18,35 @@ public class VendingMachineTest {
 	@Test
 	public void _10円玉が投入されているかを確認() {
 		sut.add(10);
-		int actual = sut.amount;
+		int actual = sut.getTotalamount();
 		assertThat(actual, is(10));
 	}
 
 	@Test
 	public void _50円玉が投入されているかを確認() {
 		sut.add(50);
-		int actual = sut.amount;
+		int actual = sut.getTotalamount();
 		assertThat(actual, is(50));
 	}
 
 	@Test
 	public void _100円玉が投入されているかを確認() {
 		sut.add(100);
-		int actual = sut.amount;
+		int actual = sut.getTotalamount();
 		assertThat(actual, is(100));
 	}
 
 	@Test
 	public void _500円玉が投入されているかを確認() {
 		sut.add(500);
-		int actual = sut.amount;
+		int actual = sut.getTotalamount();
 		assertThat(actual, is(500));
 	}
 
 	@Test
 	public void _1000円玉が投入されているかを確認() {
 		sut.add(1000);
-		int actual = sut.amount;
+		int actual = sut.getTotalamount();
 		assertThat(actual, is(1000));
 	}
 
